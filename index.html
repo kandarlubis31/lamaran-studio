@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lamaran Studio — editor CV & surat lamaran 100% client-side. Data Anda tidak pernah meninggalkan browser.">
+<title>Lamaran Studio — Editor CV & Surat Lamaran</title>
+</head>
+<body>
+
+<header>
+  <h1>📋 Lamaran Studio</h1>
+  <span class="badge" title="Semua data disimpan di browser ini. Tidak ada server, tidak ada analytics.">🔒 100% client-side</span>
+  <span id="status"></span>
+  <span class="spacer"></span>
+  <input type="file" id="file-import" accept="application/json,.json" hidden>
+  <button class="ghost" onclick="document.getElementById('file-import').click()" title="Muat data_master.json (backup dari tool lain)">📥 Import</button>
+  <button class="ghost" id="btn-backup" title="Unduh backup data (JSON)">💾 Backup</button>
+  <button class="ghost" id="btn-undo" title="Ctrl+Z">↩ Undo</button>
+  <button id="btn-simpan" title="Ctrl+S — data juga otomatis tersimpan">💾 Simpan</button>
+</header>
+
+<main>
+  <div class="kiri">
+    <nav class="tab">
+      <button data-tab="diri" class="aktif" onclick="pilihTab('diri')">👤 Data Diri</button>
+      <button data-tab="cv" onclick="pilihTab('cv')">📄 CV</button>
+      <button data-tab="surat" onclick="pilihTab('surat')">✉️ Surat Lamaran</button>
+      <button data-tab="riwayat" onclick="pilihTab('riwayat')">🗂️ Riwayat</button>
+    </nav>
+    <div id="tab-diri" class="tabpane"></div>
+    <div id="tab-cv" class="tabpane" style="display:none"></div>
+    <div id="tab-surat" class="tabpane" style="display:none"></div>
+    <div id="tab-riwayat" class="tabpane" style="display:none"></div>
+  </div>
+
+  <div class="kanan">
+    <div class="bar-preview">
+      <b style="font-size:13px;color:var(--navy)">Preview A4</b>
+      <select id="pv-doc" style="width:auto">
+        <option value="cv:it">CV — Varian IT</option>
+        <option value="cv:umum">CV — Varian Umum</option>
+        <option value="surat:it">Surat — Varian IT</option>
+        <option value="surat:umum">Surat — Varian Umum</option>
+      </select>
+      <span class="spacer-flex"></span>
+      <button class="mini" id="btn-zoom-out" title="Perkecil">🔍−</button>
+      <button class="mini" id="btn-zoom-in" title="Perbesar">🔍+</button>
+      <button class="mini" id="btn-buka-tab">↗ Buka Tab Baru</button>
+    </div>
+    <div id="frame-wrap"><iframe id="preview" title="preview dokumen"></iframe></div>
+
+    <div class="panel-export">
+      <div class="fld">
+        <label>Dokumen</label>
+        <select id="ex-doc">
+          <option value="cv">CV</option>
+          <option value="surat">Surat Lamaran</option>
+        </select>
+      </div>
+      <div class="fld">
+        <label>Varian</label>
+        <select id="ex-varian">
+          <option value="it">IT</option>
+          <option value="umum">Umum</option>
+        </select>
+      </div>
+      <div class="fld"><label>Perusahaan</label><input type="text" id="ex-perusahaan" placeholder="PT Contoh"></div>
+      <div class="fld"><label>Posisi dilamar</label><input type="text" id="ex-posisi" placeholder="IT Support"></div>
+      <div class="fld"><label>Tanggal surat</label><input type="text" id="ex-tanggal" placeholder="18 Oktober 2026"></div>
+      <div class="fld"><label>Nama file (otomatis)</label><input type="text" id="ex-nama" style="min-width:180px"></div>
+      <button id="btn-ekspor-pdf" title="Dialog print → pilih Save as PDF">🖨️ Export PDF</button>
+      <button class="alt" id="btn-ekspor-html" title="Unduh file HTML self-contained">🌐 Unduh HTML</button>
+    </div>
+    <div id="hasil"></div>
+  </div>
+</main>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

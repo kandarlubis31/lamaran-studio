@@ -1,0 +1,18 @@
+{
+  "name": "lamaran-studio",
+  "version": "1.0.0",
+  "description": "Editor CV & surat lamaran — 100% client-side, data tidak pernah meninggalkan browser Anda",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sync:css": "node scripts/sync-css.mjs"
+  },
+  "keywords": ["cv", "surat-lamaran", "resume-builder", "client-side", "privacy"],
+  "author": "Aulia Iskandar Lubis",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}

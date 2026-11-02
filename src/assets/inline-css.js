@@ -1,0 +1,146 @@
+// AUTO-GENERATED oleh scripts/sync-css.mjs — JANGAN edit file ini.
+// Sumber kebenaran: src/styles/cv.css & src/styles/ml.css
+// Regenerasi: npm run sync:css
+export const CV_CSS = `/* Shared CV stylesheet — lamaran-studio (sumber tunggal gaya CV) */
+  :root {
+    --navy: #16324f;
+    --copper: #b06a2c;
+    --ink: #1e2733;
+    --muted: #56636f;
+    --line: #dde3e8;
+    --chip-bg: #eef2f5;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #fff; font-family: 'Inter', system-ui, sans-serif; }
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body { background: #fff; margin: 0; }
+    .page { margin: 0 !important; box-shadow: none !important; border-radius: 0 !important; min-height: 0 !important; height: auto !important; }
+    .no-print { display: none !important; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+  .page {
+    width: 210mm; min-height: 297mm; margin: 8mm auto;
+    background: #fff; padding: 9mm 11mm 8mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,.25);
+    color: var(--ink);
+    display: flex; flex-direction: column;
+  }
+
+  /* ===== HEADER ===== */
+  .hdr { display: flex; justify-content: space-between; align-items: center; gap: 4mm; border-bottom: 2.5px solid var(--navy); padding-bottom: 3mm; }
+  .hdr-name { font-size: 21px; font-weight: 800; letter-spacing: .04em; color: var(--navy); text-transform: uppercase; }
+  .hdr-name span { color: var(--copper); }
+  .hdr-role { font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: .06em; margin-top: 1mm; text-transform: uppercase; }
+  .hdr-contact { text-align: right; font-size: 9.6px; color: var(--muted); line-height: 1.55; }
+  .hdr-contact b { color: var(--ink); font-weight: 600; }
+
+  /* ===== FOTO 3x4 ===== */
+  .hdr-foto {
+    width: 22mm; height: 29.3mm;
+    object-fit: cover; object-position: center 20%;
+    border: 0.6mm solid var(--navy);
+    border-radius: 1.5mm;
+    box-shadow: 0 1.5mm 3mm rgba(22,50,79,0.18);
+    flex-shrink: 0;
+  }
+
+  /* ===== SECTIONS ===== */
+  .sec-title {
+    font-size: 10.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--navy); border-bottom: 1px solid var(--line);
+    padding-bottom: 1mm; margin-bottom: 1.6mm;
+  }
+  .sec { margin-top: 2.6mm; }
+
+  /* ===== PROFILE ===== */
+  .profil { font-size: 10.2px; line-height: 1.42; color: var(--ink); margin-top: 2.2mm; text-align: justify; }
+  .profil b { color: var(--navy); }
+
+  /* ===== BODY COLUMNS ===== */
+  .cols { display: flex; gap: 6mm; flex: 1; }
+  .col-main { flex: 1.85; min-width: 0; }
+  .col-side { flex: 1; min-width: 0; }
+
+  /* ===== EXPERIENCE / PROJECTS ===== */
+  .item { margin-bottom: 2.2mm; }
+  .item-top { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; }
+  .item-role { font-size: 10.6px; font-weight: 700; color: var(--ink); line-height: 1.3; }
+  .item-date { font-size: 9px; font-weight: 600; color: var(--copper); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .item-org { font-size: 10px; font-weight: 600; color: var(--navy); margin-top: .4mm; }
+  .item ul { margin: .8mm 0 0 4mm; }
+  .item li { font-size: 10px; line-height: 1.38; color: var(--ink); margin-bottom: .4mm; }
+  .item li::marker { color: var(--copper); }
+
+  /* ===== EDUCATION ===== */
+  .edu { margin-bottom: 2mm; }
+  .edu-line { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; }
+  .edu-deg { font-size: 10.4px; font-weight: 700; }
+  .edu-school { font-size: 9.9px; font-weight: 600; color: var(--navy); margin-top: .3mm; }
+  .edu-note { font-size: 9.8px; color: var(--muted); margin-top: .4mm; line-height: 1.38; }
+
+  /* ===== SKILLS ===== */
+  .skill { margin-bottom: 1.8mm; }
+  .skill-cat { font-size: 9.4px; font-weight: 800; color: var(--navy); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .8mm; }
+  .chips { display: flex; flex-wrap: wrap; gap: 1.2mm; }
+  .chip {
+    font-size: 9px; font-weight: 600; color: var(--ink);
+    background: var(--chip-bg); border: 1px solid var(--line);
+    border-radius: 2.5mm; padding: .6mm 2.2mm; line-height: 1.3;
+  }
+
+  /* ===== CERTIFICATIONS ===== */
+  .cert { margin-bottom: 1.9mm; padding-left: 3.5mm; position: relative; }
+  .cert::before { content: ''; position: absolute; left: 0; top: 1.6mm; width: 1.6mm; height: 1.6mm; border-radius: 50%; background: var(--copper); }
+  .cert-name { font-size: 10.2px; font-weight: 700; line-height: 1.35; }
+  .cert-org { font-size: 9.4px; color: var(--muted); line-height: 1.4; }
+
+  /* ===== FOOTER INFO ===== */
+  .info-note { font-size: 9.8px; line-height: 1.5; color: var(--ink); }
+  .info-note b { color: var(--navy); }
+
+  /* toolbar (tidak ikut tercetak) */
+  .no-print { text-align: center; padding: 12px; font-family: 'Inter', sans-serif; }
+  .no-print button {
+    background: var(--navy); color: #fff; border: 0; padding: 10px 22px;
+    font-size: 14px; font-weight: 700; border-radius: 8px; cursor: pointer;
+  }
+`;
+export const ML_CSS = `/* Shared ML/surat lamaran stylesheet — lamaran-studio */
+  :root { --navy: #16324f; --copper: #b06a2c; --ink: #1e2733; --muted: #56636f; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #fff; font-family: 'Inter', system-ui, sans-serif; }
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body { background: #fff; margin: 0; }
+    .page { margin: 0 !important; box-shadow: none !important; min-height: 0 !important; height: auto !important; }
+    .no-print { display: none !important; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+  .page {
+    width: 210mm; min-height: 297mm; margin: 8mm auto;
+    background: #fff; padding: 16mm 18mm 14mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,.25);
+    color: var(--ink); font-size: 10.8px; line-height: 1.62;
+  }
+  p + p { margin-top: 2.6mm; text-align: justify; }
+  .ltr-hdr { display: flex; justify-content: space-between; align-items: center; gap: 4mm; border-bottom: 2.5px solid var(--navy); padding-bottom: 4mm; margin-bottom: 7mm; }
+  .ltr-name { font-size: 18px; font-weight: 800; letter-spacing: .04em; color: var(--navy); text-transform: uppercase; }
+  .ltr-name span { color: var(--copper); }
+  .ltr-sub { font-size: 9.6px; font-weight: 600; color: var(--muted); letter-spacing: .05em; margin-top: .8mm; text-transform: uppercase; }
+  .ltr-contact { text-align: right; font-size: 9.4px; color: var(--muted); line-height: 1.55; }
+  .ltr-meta { margin-bottom: 6mm; }
+  .ltr-meta p { line-height: 1.55; }
+  .ltr-subject { font-weight: 700; margin-bottom: 6mm; }
+  .ltr-subject b { color: var(--navy); }
+  .ltr-open { font-weight: 600; margin-bottom: 2.6mm; }
+  .ltr-close { margin-top: 7mm; }
+  .ltr-sign { margin-top: 9mm; }
+  .ltr-sign .nama { font-weight: 800; color: var(--navy); }
+  .no-print { text-align: center; padding: 12px; }
+  .no-print button { background: var(--navy); color: #fff; border: 0; padding: 10px 22px; font-size: 14px; font-weight: 700; border-radius: 8px; cursor: pointer; }
+
+  /* placeholder [Nama Perusahaan]/[Nama Posisi] — highlight hanya di layar */
+  .ph { font-weight: 700; }
+  @media screen { .ph { background: #fdf3e7; color: var(--copper); padding: 0 2px; border-radius: 3px; } }
+`;
